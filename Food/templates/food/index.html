@@ -19,6 +19,7 @@
       </div>
       <div class="col-md-2">
         <a class="btn btn-success" href="{% url 'food:details' item.id %}">Details</a>
+        <a class="btn btn-success" href="{% url 'food:edit_item' item.id %}">Edit</a>
       </div>
     </div>
     {% endfor %} {% endblock %}
