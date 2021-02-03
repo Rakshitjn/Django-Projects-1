@@ -22,6 +22,11 @@
         <a class="navbar-item nav-link" href="#">View item</a>
       </div>
     </nav>
+      {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tag }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
     {% block body %}
     {% endblock %}
   </body>
