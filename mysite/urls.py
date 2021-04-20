@@ -17,10 +17,13 @@ from django.contrib import admin
 from django.urls import path,include
 from . import view
 from user import views as user_view
+from django.contrib.auth import views as authentications
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',view.index,name = 'home'),
     path('food/',include('Food.urls')),
-    path('register/',user_view.register,name = 'register')
+    path('register/',user_view.register,name = 'register'),
+    path("login/",authentications.LoginView.as_view(template_name='user/login.html'),name='login'),
+    path("logout/",authentications.LogoutView.as_view(template_name='user/logout.html'),name='logout'),
 ]
